@@ -46,7 +46,8 @@ while x < 189:
                     a = float(a[:-1])
                 else:
                     a = float(a)
-            if abs(a) < 0.18:
+            d = 0.18 if x < 50 else 0.18
+            if abs(a) < d:
                 t = True
 
             else:
@@ -58,12 +59,14 @@ while x < 189:
             l1.append(x)
     x = x+1
     if x == 189 and f < 100:
-
-        print(l)
-        print(len(l))
-        print(l1)
+        if len(l) > 10:
+            print(l)
+            print(len(l))
+            print(l1)
         x = 2
         f = f+1
         l1.clear()
         l1.append(2)
         l.clear()
+print(l)
+print(len(l))
